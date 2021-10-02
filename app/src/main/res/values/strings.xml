@@ -12,8 +12,10 @@
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
     <string name="how_many_cupcakes_do_you_want">How many cupcakes do you want?</string>
-    <string name="user_send_data">We need your email and the person that you gonna send \n the cupcakes</string>
+    <string name="user_send_data">Insert your email and the email of the receiver</string>
     <string name="choose_the_flavor_of_your_cupcakes">Choose the flavor of your cupcakes</string>
+    <string name="choose_the_pickup_date">Choose the pickup date</string>
+    <string name="pickup_date">Pickup Date</string>
     <string-array name="flavor_options">
         <item>Chocolate</item>
         <item>Vanilla</item>

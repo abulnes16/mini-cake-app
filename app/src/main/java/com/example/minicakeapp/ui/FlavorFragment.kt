@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import com.example.minicakeapp.R
 import com.example.minicakeapp.databinding.FragmentFlavorBinding
 
@@ -18,10 +19,15 @@ import com.example.minicakeapp.databinding.FragmentFlavorBinding
 class FlavorFragment : Fragment() {
 
     private var binding: FragmentFlavorBinding? = null
+    private var flavorsAdapter: ArrayAdapter<CharSequence>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        flavorsAdapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.flavor_options,
+            android.R.layout.simple_spinner_item
+        )
     }
 
     override fun onCreateView(
@@ -38,14 +44,13 @@ class FlavorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.flavor_options,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            binding?.slcFlavors?.adapter = adapter
+        flavorsAdapter?.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding?.slcFlavors?.adapter = flavorsAdapter
+
+        binding?.btnNextFlavor?.setOnClickListener {
+            findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
         }
+
     }
 
 
