@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.minicakeapp.R
 import com.example.minicakeapp.databinding.FragmentPickupBinding
 import com.example.minicakeapp.ui.dialog.DatePickerFragment
 
@@ -36,6 +38,10 @@ class PickupFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.txtDate?.setOnClickListener {
             showDatePickerDialog()
+        }
+
+        binding?.btnNextPickup?.setOnClickListener {
+            findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
         }
     }
 

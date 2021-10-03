@@ -29,7 +29,7 @@
             android:text="@string/cancel" />
 
         <Button
-            android:id="@+id/btn_next_flavor"
+            android:id="@+id/btn_next_pickup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

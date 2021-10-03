@@ -1,14 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SummaryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/txt_summary_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:layout_marginTop="36dp"
+        android:text="@string/order_summary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/ic_email"
+        app:layout_constraintEnd_toStartOf="@+id/lbl_sent_to"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lbl_sent_to"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/lbl_sent_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/sent_to"
+        app:layout_constraintEnd_toEndOf="@+id/txt_summary_title"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="@+id/txt_summary_title"
+        app:layout_constraintTop_toBottomOf="@+id/txt_summary_title" />
+
+    <ImageView
+        android:id="@+id/img_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:src="@drawable/ic_quantity"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/quantity"
+        app:layout_constraintStart_toStartOf="@+id/txt_view_sent_to"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_sent_to" />
+
+    <TextView
+        android:id="@+id/txt_view_sent_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_sent_to"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sent_to"
+        tools:text="example@example.com" />
+
+    <TextView
+        android:id="@+id/txt_view_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:text="0" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:src="@drawable/ic_flavor"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_flavor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lbl_flavor"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/lbl_flavor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/flavor"
+        app:layout_constraintStart_toStartOf="@+id/txt_view_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_quantity" />
+
+    <TextView
+        android:id="@+id/txt_view_flavor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_flavor"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_flavor"
+        tools:text="Chocolate" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:src="@drawable/ic_pickup_date"
+        app:layout_constraintBottom_toBottomOf="@+id/lbl_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lbl_date"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/lbl_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/pickup_date"
+        app:layout_constraintStart_toStartOf="@+id/txt_view_flavor"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_flavor" />
+
+    <TextView
+        android:id="@+id/txt_view_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/lbl_date"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_date"
+        tools:text="12/12/2000" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="@dimen/horizontalMargin"
+        android:text="@string/send_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_view_date" />
+
+    <Button
+        android:id="@+id/btn_cancel_order"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontalMargin"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/horizontalMargin"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send" />
+</androidx.constraintlayout.widget.ConstraintLayout>
