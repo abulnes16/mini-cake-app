@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.minicakeapp.R
+import com.example.minicakeapp.adapters.OrderAdapter
+import com.example.minicakeapp.databinding.FragmentOrderBinding
+import com.example.minicakeapp.models.Order
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -18,16 +17,36 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HistoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    private var binding: FragmentOrderBinding? = null
+    private val dummyData: MutableList<Order> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        dummyData.addAll(
+            listOf(
+                Order(
+                    "angel_bulnes16@yahoo.com",
+                    receiver = "dbulnes@yahoo.com",
+                    pickupDate = "12/12/2000",
+                    numberOfCupcakes = 10,
+                    flavor = "Chocolate"
+                ),
+                Order(
+                    "angel_bulnes16@yahoo.com",
+                    receiver = "dbulnes@yahoo.com",
+                    pickupDate = "12/12/2000",
+                    numberOfCupcakes = 20,
+                    flavor = "Chocolate"
+                ),
+                Order(
+                    "angel_bulnes16@yahoo.com",
+                    receiver = "dbulnes@yahoo.com",
+                    pickupDate = "12/12/2000",
+                    numberOfCupcakes = 5,
+                    flavor = "Vainilla"
+                ),
+            )
+        )
     }
 
     override fun onCreateView(
@@ -35,26 +54,17 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false)
+        val fragmentBinding =
+            FragmentOrderBinding.inflate(inflater, container, false)
+        binding = fragmentBinding
+        return fragmentBinding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HistoryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HistoryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.orderRecyclerView?.adapter = OrderAdapter(requireContext(), dummyData)
+
     }
+
+
 }

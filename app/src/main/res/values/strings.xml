@@ -19,6 +19,12 @@
     <string name="order_summary">Order Summary</string>
     <string name="flavor">Flavor</string>
     <string name="send_order">Send Order</string>
+    <string name="order_item_total">Total</string>
+    <string name="email_data">Email data</string>
+    <string name="choose_quantity">Choose the quantity</string>
+    <string name="order_history">Order history</string>
+    <string name="choose_flavor">Choose the flavor</string>
+    <string name="summary">Summary</string>
     <string-array name="flavor_options">
         <item>Chocolate</item>
         <item>Vanilla</item>

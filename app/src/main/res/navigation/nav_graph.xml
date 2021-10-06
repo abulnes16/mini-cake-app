@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.minicakeapp.ui.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
@@ -20,8 +20,8 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.minicakeapp.ui.UserFragment"
-        android:label="fragment_user"
-        tools:layout="@layout/fragment_user" >
+        android:label="@string/email_data"
+        tools:layout="@layout/fragment_user">
         <action
             android:id="@+id/action_userFragment_to_quantityFragment"
             app:destination="@id/quantityFragment" />
@@ -29,8 +29,8 @@
     <fragment
         android:id="@+id/quantityFragment"
         android:name="com.example.minicakeapp.ui.QuantityFragment"
-        android:label="fragment_quantity"
-        tools:layout="@layout/fragment_quantity" >
+        android:label="@string/choose_quantity"
+        tools:layout="@layout/fragment_quantity">
         <action
             android:id="@+id/action_quantityFragment_to_flavorFragment"
             app:destination="@id/flavorFragment" />
@@ -38,13 +38,13 @@
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.minicakeapp.ui.HistoryFragment"
-        android:label="fragment_order"
+        android:label="@string/order_history"
         tools:layout="@layout/fragment_order" />
     <fragment
         android:id="@+id/flavorFragment"
         android:name="com.example.minicakeapp.ui.FlavorFragment"
-        android:label="fragment_flavor"
-        tools:layout="@layout/fragment_flavor" >
+        android:label="@string/choose_flavor"
+        tools:layout="@layout/fragment_flavor">
         <action
             android:id="@+id/action_flavorFragment_to_pickupFragment"
             app:destination="@id/pickupFragment" />
@@ -52,8 +52,8 @@
     <fragment
         android:id="@+id/pickupFragment"
         android:name="com.example.minicakeapp.ui.PickupFragment"
-        android:label="fragment_pickup"
-        tools:layout="@layout/fragment_pickup" >
+        android:label="@string/choose_the_pickup_date"
+        tools:layout="@layout/fragment_pickup">
         <action
             android:id="@+id/action_pickupFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
@@ -61,6 +61,6 @@
     <fragment
         android:id="@+id/summaryFragment"
         android:name="com.example.minicakeapp.ui.SummaryFragment"
-        android:label="fragment_summary"
+        android:label="@string/summary"
         tools:layout="@layout/fragment_summary" />
 </navigation>

@@ -40,6 +40,10 @@ class HomeFragment : Fragment() {
         binding?.btnOrder?.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_userFragment)
         }
+
+        binding?.btnHistory?.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_historyFragment)
+        }
     }
 
 
